@@ -28,7 +28,7 @@ function MainBody() {
   return (
     <Main>
       <MainHead>
-        <Card>
+        <Card className="mainScreenQuestion" style = {{backgroundColor  : "white", padding: "10px", borderRadius: "5px"}}>
           <CardBody>
             <CardTitle>
               <p className="Username">
@@ -67,6 +67,8 @@ const Main = styled.div`
   padding: 15px;
   text-align: left;
   overflow-y: scroll;
+
 `;
 
 const MainHead = styled.div``;
+
