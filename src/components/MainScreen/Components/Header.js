@@ -1,11 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import { Button } from "reactstrap";
+// import { Button } from "reactstrap";
 import { LinkContainer } from "react-router-bootstrap";
 
 import Wrapper from "./Helpers/Wrapper.js";
+import { useUserContext } from "../../../context/userContext";
 
 function Header() {
+  const { user, logoutUser } = useUserContext();
+
   return (
     <Wrapper>
       <Navbar>
@@ -32,13 +35,11 @@ function Header() {
           </NavbarSearch>
         </NavbarCenter>
         <NavbarRight className="NavbarRight">
-          <LinkContainer to="/Login">
+          <LinkContainer to="/profile">
             <i className="fas fa-user"></i>
           </LinkContainer>
-          <i className="fas fa-globe"></i>
-          <Button className="AddQueBtn" color="secondary">
-            AddQue
-          </Button>
+
+          <Button onClick={logoutUser}>Log out</Button>
         </NavbarRight>
       </Navbar>
     </Wrapper>
@@ -97,4 +98,14 @@ const NavbarRight = styled.div`
   justify-content: space-around;
   align-items: center;
   padding-right: 30px;
+`;
+
+const Button = styled.div`
+  background-color: grey;
+  padding: 5px;
+  width: 40%;
+  :hover {
+    cursor: pointer;
+    color: black;
+  }
 `;
