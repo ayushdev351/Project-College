@@ -1,5 +1,4 @@
 import React from "react";
-import { Navbar, NavItem } from "reactstrap";
 import { useUserContext } from "../context/userContext";
 
 import MainScreen from "../components/MainScreen/Components/MainScreen.js";

@@ -21,6 +21,7 @@ const Signin = () => {
       forgotPassword(email).then(() => {
         emailRef.current.value = "";
       });
+    alert("Password Reset Instructions sent to your email");
   };
 
   return (
